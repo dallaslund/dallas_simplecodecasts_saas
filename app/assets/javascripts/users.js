@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
+ /*global Stripe*/ Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   // Watch for a form submission:
   $("#form-submit-btn").click(function(event) {
     event.preventDefault();
@@ -12,7 +12,7 @@ $(document).ready(function() {
         
     if (!error) {
       // Get the Stripe token:
-      Stripe.createToken({
+     Stripe.createToken({
         number: ccNum,
         cvc: cvcNum,
         exp_month: expMonth,
